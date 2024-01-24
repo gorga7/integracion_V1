@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear envío</title>
+</head>
+<body>
+
+    <h1>Crear envío</h1>
+
+    <form id="jsonForm">
+        <label for="ID_Sesion">ID de Sesión:</label>
+        <input type="text" id="ID_Sesion" required><br>
+
+        <label for="K_Tipo_Guia">K_Tipo_Guia:</label>
+        <input type="number" id="K_Tipo_Guia" required><br>
+
+        <label for="K_Tipo_Envio">K_Tipo_Envio:</label>
+        <input type="number" id="K_Tipo_Envio" required><br>
+
+        <label for="F_Recoleccion">F_Recoleccion:</label>
+        <input type="text" id="F_Recoleccion" ><br>
+
+        <label for="K_Domicilio_Recoleccion">K_Domicilio_Recoleccion:</label>
+        <input type="number" id="K_Domicilio_Recoleccion" ><br>
+
+        <label for="D_Cliente_Remitente">D_Cliente_Remitente:</label>
+        <input type="text" id="D_Cliente_Remitente" required><br>
+
+        <label for="Telefono_Remitente">Telefono_Remitente:</label>
+        <input type="text" id="Telefono_Remitente" required><br>
+
+        <label for="K_Cliente_Destinatario">K_Cliente_Destinatario:</label>
+        <input type="number" id="K_Cliente_Destinatario" required><br>
+
+        <label for="Cliente_Destinatario">Cliente_Destinatario:</label>
+        <input type="text" id="Cliente_Destinatario" required><br>
+
+        <label for="Direccion_Destinatario">Direccion_Destinatario:</label>
+        <input type="text" id="Direccion_Destinatario" required><br>
+
+        <label for="Telefono">Telefono:</label>
+        <input type="text" id="Telefono" required><br>
+        <label for="RUT">RUT:</label>
+        <input type="text" id="RUT" required><br>
+
+        <label for="K_Oficina_Destino">K_Oficina_Destino:</label>
+        <input type="text" id="K_Oficina_Destino" required><br>
+
+        <label for="Entrega">Entrega:</label>
+        <input type="text" id="Entrega" required><br>
+
+        <label for="Paquetes_Ampara">Paquetes_Ampara:</label>
+        <input type="text" id="Paquetes_Ampara" required><br>
+
+        <label for="Detalle_Paquetes">Detalle_Paquetes:</label>
+        <input type="text" id="Detalle_Paquetes" required><br>
+
+        <label for="Observaciones">Observaciones:</label>
+        <input type="text" id="Observaciones" required><br>
+
+        <label for="CostoMercaderia">CostoMercaderia:</label>
+        <input type="text" id="CostoMercaderia" required><br>
+
+        <label for="Referencia_Pago">Referencia_Pago:</label>
+        <input type="text" id="Referencia_Pago" required><br>
+
+        <label for="CodigoPedido">CodigoPedido:</label>
+        <input type="text" id="CodigoPedido" required><br>
+
+        <label for="Serv_DDF">Serv_DDF:</label>
+        <input type="text" id="Serv_DDF" required><br>
+
+        <label for="Serv_Cita">Serv_Cita:</label>
+        <input type="text" id="Serv_Cita" required><br>
+
+        <label for="Latitud_Destino">Latitud_Destino:</label>
+        <input type="text" id="Latitud_Destino" required><br>
+
+        <label for="Longitud_Destino">Longitud_Destino:</label>
+        <input type="text" id="Longitud_Destino" required><br>
+
+        <button type="button" id="btnCrearEnvio">Enviar</button>
+    </form>
+
+    
+    <p id="Respuesta"></p>
+<script src="envio.js"></script>
+</body>
+</html>
