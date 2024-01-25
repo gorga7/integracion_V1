@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#paquetesContainer {
+    margin-bottom: 15px;
+}
+
+.paqueteDiv {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tipoPaquete,
+.cantidadPaquete {
+    width: 45%; /* Ajusta el ancho según tu preferencia */
+    margin-right: 5%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#agregarPaquete {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#agregarPaquete:hover {
+    background-color: #45a049;
+}
+
+#btnCrearEnvio {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#btnCrearEnvio:hover {
+    background-color: #007AA5;
+}
+
+#Respuesta {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
