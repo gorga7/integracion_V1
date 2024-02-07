@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let paquetes = [];
 
     btnCrearEnvio.addEventListener('click', async function (event) {
+        event.preventDefault();
         try {
             const ID_Sesion = localStorage.getItem('ID_Session');
             const K_Tipo_Guia = document.getElementById('K_Tipo_Guia').value;
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const K_Oficina_Destino = document.getElementById('K_Oficina_Destino').value;
             const Entrega = document.getElementById('Entrega').value;
             const Paquetes_Ampara = document.getElementById('Paquetes_Ampara').value;
+            const CodigoPedido = document.getElementById('CodigoPedido').value; // Obtener CodigoPedido
 
             const jsonData = {
                 ID_Sesion,
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 Observaciones: document.getElementById('Observaciones').value,
                 CostoMercaderia: document.getElementById('CostoMercaderia').value,
                 Referencia_Pago: document.getElementById('Referencia_Pago').value,
-                CodigoPedido: document.getElementById('CodigoPedido').value,
+                CodigoPedido, // Agregar CodigoPedido
                 Serv_DDF: document.getElementById('Serv_DDF').value,
                 Serv_Cita: document.getElementById('Serv_Cita').value,
                 Latitud_Destino: document.getElementById('Latitud_Destino').value,
@@ -71,74 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (responseData.result === 0) {
                 Respuesta.innerText = JSON.stringify(responseData.data, null, 2);
-
-                const imprimirButton = document.createElement('button');
-                imprimirButton.innerText = 'Imprimir PEGOTÍN';
-
-                imprimirButton.addEventListener('click', async () => {
-                    const getPegoteUrl = 'https://altis-ws.grupoagencia.com:444/JAgencia/JAgencia.asmx/wsGetPegote';
-                    const numeroRastreo = responseData.data.Codigo_Rastreo;
-                
-                    if (numeroRastreo) {
-                        const K_Oficina = numeroRastreo.substring(0, 3);
-                        const K_Guia = numeroRastreo.substring(3);
-                
-                        const idSession = localStorage.getItem('ID_Session');
-                
-                        const getPegoteParams = {
-                            K_Oficina,
-                            K_Guia,
-                            ID_Sesion: idSession,
-                            CodigoPedido: ""
-                        };
-                
-                        const getPegoteOptions = {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Host': 'altis-ws.grupoagencia.com',
-                            },
-                            mode: 'cors',
-                            body: JSON.stringify(getPegoteParams),
-                        };
-                
-                        try {
-                            const pegoteResponse = await fetch(getPegoteUrl, getPegoteOptions);
-                
-                            if (!pegoteResponse.ok) {
-                                throw new Error(`HTTP error! Status: ${pegoteResponse.status}`);
-                            }
-                
-                            const pegoteData = await pegoteResponse.json();
-                
-                            // Verificar si "Pegote" existe y no es una cadena vacía
-                            if (pegoteData.Pegote !== undefined && pegoteData.Pegote !== null && pegoteData.Pegote !== "") {
-                                const base64Pdf = pegoteData.Pegote;
-                                const pdfData = cleanAndDecodeBase64(base64Pdf);
-                
-                                // Resto del código para abrir el PDF
-                                const arrayBuffer = new ArrayBuffer(pdfData.length);
-                                const uint8Array = new Uint8Array(arrayBuffer);
-                                for (let i = 0; i < pdfData.length; i++) {
-                                    uint8Array[i] = pdfData.charCodeAt(i);
-                                }
-                
-                                const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-                                const pdfUrl = URL.createObjectURL(blob);
-                
-                                window.open(pdfUrl, '_blank');
-                            } else {
-                                console.error('Error: El campo "Pegote" está vacío o indefinido');
-                            }
-                        } catch (error) {
-                            console.error('Error al obtener PEGOTÍN:', error.message);
-                        }
-                    } else {
-                        console.error('Error en el servidor: El número de rastreo no está disponible.');
-                    }
-                });
-
-                document.body.appendChild(imprimirButton);
             } else {
                 console.error('Error en el servidor:', responseData.data);
                 Respuesta.innerText = 'Error en el servidor: ' + responseData.data;
@@ -151,8 +85,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 Respuesta.innerText = 'Error desconocido: ' + error.message;
             }
         }
+        handleResponse();
     });
 
+    async function handleResponse() {
+        try {
+            // El código para enviar la solicitud y manejar la respuesta va aquí
+        } catch (error) {
+            console.error('Error:', error.message);
+            Respuesta.innerText = 'Error desconocido: ' + error.message;
+        }
+    }
     document.getElementById('agregarPaquete').addEventListener('click', function () {
         const paqueteDiv = document.createElement('div');
         paqueteDiv.classList.add('paqueteDiv');
@@ -173,17 +116,82 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('paquetesContainer').appendChild(paqueteDiv);
     });
 
-    function cleanAndDecodeBase64(input) {
-        if (input === undefined || input === null) {
-            console.error('Input is undefined or null');
-            return '';
-        }
+    // Función para obtener el Pegote
+    async function obtenerPegote() {
+        try {
+            // Obtener los parámetros necesarios para obtener el pegote
+            const K_Oficina = document.getElementById('K_Oficina').value;
+            const K_Guia = document.getElementById('K_Guia').value;
+            const CodigoPedido = document.getElementById('CodigoPedidoPegote').value; // Obtener CodigoPedido
+            const ID_Sesion = localStorage.getItem('ID_Session');
     
-        const cleanedInput = input.replace(/[^A-Za-z0-9+/]/g, '');
-        const padding = '='.repeat((4 - cleanedInput.length % 4) % 4);
-        const paddedInput = cleanedInput + padding;
-        return atob(paddedInput);
+            // Configurar la petición para obtener el pegote
+            const getPegoteUrl = 'https://altis-ws.grupoagencia.com:444/JAgencia/JAgencia.asmx/wsGetPegote';
+            const getPegoteParams = {
+                K_Oficina: document.getElementById('K_Oficina').value,
+                K_Guia: document.getElementById('K_Guia').value,
+                CodigoPedido: document.getElementById('CodigoPedidoPegote').value,
+                ID_Sesion: localStorage.getItem('ID_Session')
+            };
+            const getPegoteOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Host': 'altis-ws.grupoagencia.com',
+                },
+                mode: 'cors',
+                body: JSON.stringify(getPegoteParams), // Enviar el objeto JSON como cuerpo de la solicitud
+            };
+    
+            // Realizar la petición para obtener el pegote
+            const pegoteResponse = await fetch(getPegoteUrl, getPegoteOptions);
+    
+            // Verificar la respuesta del servidor
+            if (!pegoteResponse.ok) {
+                throw new Error(`HTTP error! Status: ${pegoteResponse.status}`);
+            }
+    
+            // Obtener los datos de la respuesta del servidor
+            const pegoteData = await pegoteResponse.json();
+    
+            // Mostrar la respuesta en la consola
+            console.log('Respuesta de wsGetPegote:', pegoteData);
+    
+            // Verificar si pegoteData es undefined o si no contiene datos válidos
+            if (!pegoteData || !pegoteData.data || !pegoteData.data.Pegote) {
+                throw new Error('La respuesta del servidor no contiene datos válidos.');
+            }
+    
+            // Obtener el código del pegote y quitar las comillas al principio y al final
+            const pegoteCode = pegoteData.data.Pegote.replace(/^"|"$/g, '');
+    
+            // Convertir el código del pegote a un archivo PDF
+            const byteCharacters = atob(pegoteCode);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: 'application/pdf' });
+    
+            // Crear una URL para el PDF
+            const pdfUrl = URL.createObjectURL(blob);
+    
+            // Crear un enlace de descarga para el PDF
+            const link = document.createElement('a');
+link.href = pdfUrl;
+link.download = pegoteData.data.Nombre || 'pegote.pdf'; // Usar el campo "Nombre" si está disponible, de lo contrario, usar "pegote.pdf" como nombre predeterminado
+link.style.display = 'none';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+        } catch (error) {
+            console.error('Error al obtener PEGOTÍN:', error.message);
+        }
     }
+
+    // Agregar evento al botón btnObtenerPegote
+    document.getElementById('btnObtenerPegote').addEventListener('click', obtenerPegote);
 
     function getPaquetes() {
         const paquetesDivs = document.querySelectorAll('.paqueteDiv');
@@ -222,4 +230,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return paquetes;
     }
-}); 
+});
