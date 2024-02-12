@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
+
+    
     //WEBSERVICE INGUIA_LEVANTE PARA CREAR ENVÍO
 
      // Agrega un event listener al botón de crear envío
@@ -215,6 +219,11 @@ function getPaquetes() {
 
 
 
+
+
+
+
+
     //WEBSERVICE GETPEGOTE PARA OBTENER EL PEGOTE DEL ENVÍO CREADO
 
 
@@ -296,6 +305,12 @@ async function obtenerPegote() {
  // Agrega un evento al botón con el ID 'btnObtenerPegote' que llama a la función obtenerPegote cuando se hace clic
 document.getElementById('btnObtenerPegote').addEventListener('click', obtenerPegote);
 });
+
+
+
+
+
+
 
 
 //WEBSERVICE PARA RASTREAR UN ENVÍO
