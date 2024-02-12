@@ -155,25 +155,30 @@ button:hover {
 #response-table th,
 #response-table td {
     border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
+    padding: 10px;
 }
 
 #response-table th {
     background-color: #f2f2f2;
-}
-
-/* Estilos para las celdas con valores */
-#response-table td {
-    background-color: #ffffff;
+    font-weight: bold;
 }
 
 /* Estilos para filas impares */
-#response-table tr:nth-child(odd) {
+#response-table tr:nth-child(odd) td {
     background-color: #f9f9f9;
 }
 
 /* Estilos para filas al pasar el ratón */
 #response-table tr:hover {
-    background-color: #f2f2f2;
+    background-color: #e2e2e2;
+}
+
+/* Estilos para la primera columna (claves) */
+#response-table td:first-child {
+    font-weight: bold;
+}
+
+/* Estilos para la última columna (valores) */
+#response-table td:last-child {
+    font-style: italic;
 }
