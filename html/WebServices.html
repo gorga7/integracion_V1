@@ -100,8 +100,12 @@
 
 </div>
 
-    <hr><br><br>
 
+
+
+
+    <hr><br><br>
+    <div class="container">
     <h1>Imprime Pegote</h1>
     <div class="inputs-container">
         <label for="K_Oficina">Oficina Origen</label>
@@ -117,13 +121,65 @@
     
         <!-- Botón para obtener el Pegote -->
         <button id="btnObtenerPegote">Obtener Pegote</button>
-    </div>
+    </div></div>
+
+
+
+
 
 <hr><br><br>
 
-<h1>Rastrea Envio</h1>
+<div class="container">
+    <h1>Rastrea Envío</h1>
 
+    <div class="form-container">
+        <form id="formulario">
+            <div class="input-group">
+                <label for="K_Oficina_Origen">Oficina de Origen:</label>
+                <input type="text" id="K_Oficina_Origen" name="K_Oficina_Origen">
+            </div>
 
+            <div class="input-group">
+                <label for="K_GuiaRastreo">Número de Guía:</label>
+                <input type="text" id="K_GuiaRastreo" name="K_Guia">
+            </div>
+
+            <div class="input-group">
+                <label for="Referencia">Referencia:</label>
+                <input type="text" id="Referencia" name="Referencia">
+            </div>
+
+            <div class="input-group">
+                <label for="ID_Sesion">ID de Sesión:</label>
+                <input type="text" id="ID_Sesion" name="ID_Sesion">
+            </div>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </div>
+
+    <div id="output-container">
+        <h2>Respuesta del Webservice:</h2>
+        <div class="table-wrapper">
+            <table id="output-table" class="response-table">
+                <tbody>
+                    <tr>
+                        <td class="property">K_Oficina_Origen:</td>
+                        <td id="k-oficina-origen" class="value"></td>
+                    </tr>
+                    <tr>
+                        <td class="property">K_Guia:</td>
+                        <td id="k-guia" class="value"></td>
+                    </tr>
+                    <tr>
+                        <td class="property">C_Oficina:</td>
+                        <td id="c-oficina" class="value"></td>
+                    </tr>
+                    <!-- Agregar más filas para otras propiedades -->
+                </tbody>
+            </table>
+        </div>
+    </div>
     
 <script src="/js/WebServices.js"></script>
 </body>

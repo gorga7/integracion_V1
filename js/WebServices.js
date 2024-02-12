@@ -296,3 +296,142 @@ async function obtenerPegote() {
  // Agrega un evento al botón con el ID 'btnObtenerPegote' que llama a la función obtenerPegote cuando se hace clic
 document.getElementById('btnObtenerPegote').addEventListener('click', obtenerPegote);
 });
+
+
+//WEBSERVICE PARA RASTREAR UN ENVÍO
+
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    
+    // Obtener los valores de los campos del formulario
+    const K_Oficina_Origen = document.getElementById('K_Oficina_Origen').value;
+    const K_GuiaRastreo = document.getElementById('K_GuiaRastreo').value;
+    const Referencia = document.getElementById('Referencia').value;
+    const ID_Sesion = localStorage.getItem('ID_Session');
+
+    // Construir el objeto con los datos del formulario
+    const requestData = {
+        "K_Oficina_Origen": K_Oficina_Origen,
+        "K_Guia": K_GuiaRastreo,
+        "Referencia": Referencia,
+        "ID_Sesion": ID_Sesion
+    };
+
+    console.log('Datos enviados al servidor:', requestData); // Agregar console.log para mostrar los datos enviados
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Host': 'altis-ws.grupoagencia.com',
+        },
+        mode: 'cors',
+        body: JSON.stringify(requestData), // Convierte el objeto JSON a string
+    };
+
+    // Realizar la solicitud fetch al endpoint proporcionado
+    fetch('https://altis-ws.grupoagencia.com:444/JAgencia/JAgencia.asmx/wsRastreoGuia', requestOptions)
+        .then(response => {
+            // Verificar si la respuesta no es satisfactoria (código HTTP diferente a 200)
+            if (!response.ok) {
+                // Si la respuesta no es satisfactoria, lanzar un error con el código de estado HTTP
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // Convertir la respuesta del servidor a formato JSON y retornarla
+            return response.json();
+        })
+        .then(data => {
+            // Manejar los datos de la respuesta aquí, por ejemplo, mostrarlos en la consola
+            console.log('Respuesta del servidor:', data);
+            // También podríamos mostrarlos en algún elemento del DOM si es necesario
+            // document.getElementById('respuesta').innerText = JSON.stringify(data);
+        })
+        .catch(error => {
+            // Manejar los errores de red y otros errores aquí
+            console.error('Error:', error.message);
+            // No podemos acceder a 'data' aquí, ya que está fuera del alcance
+            // console.log(data)
+            // Podríamos mostrar un mensaje de error en algún elemento del DOM si es necesario
+            // document.getElementById('respuesta').innerText = 'Error desconocido';
+        });
+
+});
+
+
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    
+    // Obtener los valores de los campos del formulario
+    const K_Oficina_Origen = document.getElementById('K_Oficina_Origen').value;
+    const K_GuiaRastreo = document.getElementById('K_GuiaRastreo').value;
+    const Referencia = document.getElementById('Referencia').value;
+    const ID_Sesion = localStorage.getItem('ID_Session');
+
+    // Construir el objeto con los datos del formulario
+    const requestData = {
+        "K_Oficina_Origen": K_Oficina_Origen,
+        "K_Guia": K_GuiaRastreo,
+        "Referencia": Referencia,
+        "ID_Sesion": ID_Sesion
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Host': 'altis-ws.grupoagencia.com',
+        },
+        mode: 'cors',
+        body: JSON.stringify(requestData), // Convierte el objeto JSON a string
+    };
+
+    // Realizar la solicitud fetch al endpoint proporcionado
+    fetch('https://altis-ws.grupoagencia.com:444/JAgencia/JAgencia.asmx/wsRastreoGuia', requestOptions)
+        .then(response => {
+            // Verificar si la respuesta no es satisfactoria (código HTTP diferente a 200)
+            if (!response.ok) {
+                // Si la respuesta no es satisfactoria, lanzar un error con el código de estado HTTP
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // Convertir la respuesta del servidor a formato JSON y retornarla
+            return response.json();
+        })
+        .then(data => {
+            // Manejar los datos de la respuesta aquí
+            console.log('Respuesta del servidor:', data);
+
+            // Mostrar la respuesta en forma de tabla
+            showResponse(data);
+        })
+        .catch(error => {
+            // Manejar los errores de red y otros errores aquí
+            console.error('Error:', error.message);
+        });
+});
+
+function showResponse(responseData) {
+    const outputTable = document.getElementById('output-table');
+    outputTable.innerHTML = ''; // Limpiar contenido anterior de la tabla
+
+    // Crear una fila para el encabezado de la tabla
+    const headerRow = document.createElement('tr');
+    for (const key in responseData.data) {
+        if (Object.hasOwnProperty.call(responseData.data, key)) {
+            const th = document.createElement('th');
+            th.textContent = key;
+            headerRow.appendChild(th);
+        }
+    }
+    outputTable.appendChild(headerRow);
+
+    // Crear una fila para cada conjunto de datos
+    const dataRow = document.createElement('tr');
+    for (const key in responseData.data) {
+        if (Object.hasOwnProperty.call(responseData.data, key)) {
+            const td = document.createElement('td');
+            td.textContent = responseData.data[key];
+            dataRow.appendChild(td);
+        }
+    }
+    outputTable.appendChild(dataRow);
+}

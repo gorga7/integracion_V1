@@ -28,6 +28,10 @@ h1 {
     text-align: center; /* Alinea el título al centro */
 }
 
+.form-container {
+    margin-bottom: 20px;
+}
+
 form {
     margin-top: 20px;
     text-align: left;
@@ -57,12 +61,15 @@ input[type="text"]:focus {
 }
 
 button {
-    width: 50%; /* Reducir el ancho de los botones */
-    padding: 10px; /* Reducir el relleno de los botones */
-    font-size: 14px; /* Reducir el tamaño de fuente de los botones */
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
     color: #fff;
     background-color: #489d5a;
-    transition: background-color 0.3s ease
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -133,4 +140,33 @@ button:hover {
 
 .inputs-container button {
     width: calc(100% - 20px);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.response-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.response-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.response-table .property {
+    font-weight: bold;
+    color: #333;
+}
+
+.response-table .value {
+    color: #666;
+}
+
+.response-table tr:last-child td {
+    border-bottom: none;
 }
