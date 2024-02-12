@@ -356,8 +356,6 @@ document.getElementById('formulario').addEventListener('submit', function(event)
             return response.json();
         })
         .then(data => {
-            document.getElementById('k-oficina-origen').textContent = data.data.K_Oficina_Origen;
-            document.getElementById('k-guia').textContent = data.data.K_Guia;
             document.getElementById('d-tipo-guia').textContent = data.data.D_Tipo_Guia;
             document.getElementById('d-tipo-envio').textContent = data.data.D_Tipo_Envio;
             document.getElementById('d-tipo-entrega').textContent = data.data.D_Tipo_Entrega;
@@ -365,6 +363,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
             document.getElementById('oficina-destino').textContent = data.data.Oficina_Destino;
             document.getElementById('destinatario').textContent = data.data.Destinatario;
             document.getElementById('estado-guia').textContent = data.data.Estado_de_la_Guia;
+            document.getElementById('cantidad-paquetes').textContent = data.data.Paquetes_Ampara;
         })
         .catch(error => {
             // Manejar los errores de red y otros errores aquí
