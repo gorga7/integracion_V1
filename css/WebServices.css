@@ -182,3 +182,33 @@ button:hover {
 #response-table td:last-child {
     font-style: italic;
 }
+
+
+.historial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Estilos para las celdas de la tabla de historial */
+.historial-table th, .historial-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilos para la primera fila (encabezado) de la tabla de historial */
+.historial-table th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para las filas impares de la tabla de historial */
+.historial-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para las filas pares de la tabla de historial */
+.historial-table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
