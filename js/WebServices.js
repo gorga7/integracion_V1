@@ -341,10 +341,15 @@ document.getElementById('formulario').addEventListener('submit', function(event)
             return response.json();
         })
         .then(data => {
-            // Manejar los datos de la respuesta aquí, por ejemplo, mostrarlos en la consola
-            console.log('Respuesta del servidor:', data);
-            // También podríamos mostrarlos en algún elemento del DOM si es necesario
-            // document.getElementById('respuesta').innerText = JSON.stringify(data);
+            document.getElementById('k-oficina-origen').textContent = data.data.K_Oficina_Origen;
+            document.getElementById('k-guia').textContent = data.data.K_Guia;
+            document.getElementById('d-tipo-guia').textContent = data.data.D_Tipo_Guia;
+            document.getElementById('d-tipo-envio').textContent = data.data.D_Tipo_Envio;
+            document.getElementById('d-tipo-entrega').textContent = data.data.D_Tipo_Entrega;
+            document.getElementById('cliente-remitente').textContent = data.data.Cliente_Remitente;
+            document.getElementById('oficina-destino').textContent = data.data.Oficina_Destino;
+            document.getElementById('destinatario').textContent = data.data.Destinatario;
+            document.getElementById('estado-guia').textContent = data.data.Estado_de_la_Guia;
         })
         .catch(error => {
             // Manejar los errores de red y otros errores aquí

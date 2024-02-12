@@ -160,26 +160,51 @@
 
     <div id="output-container">
         <h2>Respuesta del Webservice:</h2>
-        <div class="table-wrapper">
-            <table id="output-table" class="response-table">
-                <tbody>
-                    <tr>
-                        <td class="property">K_Oficina_Origen:</td>
-                        <td id="k-oficina-origen" class="value"></td>
-                    </tr>
-                    <tr>
-                        <td class="property">K_Guia:</td>
-                        <td id="k-guia" class="value"></td>
-                    </tr>
-                    <tr>
-                        <td class="property">C_Oficina:</td>
-                        <td id="c-oficina" class="value"></td>
-                    </tr>
-                    <!-- Agregar más filas para otras propiedades -->
-                </tbody>
-            </table>
-        </div>
+        <table id="response-table">
+            <tr>
+                <th>Propiedad</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>K_Oficina_Origen</td>
+                <td id="k-oficina-origen"></td>
+            </tr>
+            <tr>
+                <td>K_Guia</td>
+                <td id="k-guia"></td>
+            </tr>
+            <tr>
+                <td>D_Tipo_Guia</td>
+                <td id="d-tipo-guia"></td>
+            </tr>
+            <tr>
+                <td>D_Tipo_Envio</td>
+                <td id="d-tipo-envio"></td>
+            </tr>
+            <tr>
+                <td>D_Tipo_Entrega</td>
+                <td id="d-tipo-entrega"></td>
+            </tr>
+            <tr>
+                <td>Cliente_Remitente</td>
+                <td id="cliente-remitente"></td>
+            </tr>
+            <tr>
+                <td>Oficina_Destino</td>
+                <td id="oficina-destino"></td>
+            </tr>
+            <tr>
+                <td>Destinatario</td>
+                <td id="destinatario"></td>
+            </tr>
+            <tr>
+                <td>Estado_de_la_Guia</td>
+                <td id="estado-guia"></td>
+            </tr>
+           
+        </table>
     </div>
+    
     
 <script src="/js/WebServices.js"></script>
 </body>
