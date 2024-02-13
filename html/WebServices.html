@@ -8,11 +8,12 @@
 </head>
 <body>
 
-    <h1>Crear envío</h1>
+    
 
     
     <div class="container">
         <img src="https://www.dac.com.uy/imagenes/logo-tr-color.png" alt="DAC Logo" class="logo">
+        <h1>Crear envío</h1>
     <form id="jsonForm">
 
         <label for="K_Tipo_Guia" >Tipo de guia:</label>
@@ -100,7 +101,7 @@
 
 
 
-    <hr><br><br>
+    <hr>
     <div class="container">
     <h1>Imprime Etiqueta</h1>
     <div class="inputs-container">
@@ -122,7 +123,7 @@
 
 
 
-<hr><br><br>
+<hr>
 
 <div class="container">
     <h1>Rastrea Envío</h1>
@@ -154,7 +155,7 @@
     </div>
 
     <div id="output-container">
-        <table id="response-table">
+         <table class="response-table">
             <tr>
                 <th>Datos</th>
                 <th>Informacion</th>
@@ -195,7 +196,55 @@
         </table>
     </div>
     <div id="historial-container"></div>
-    
+</div>
+<hr>
+
+
+
+
+
+
+
+
+<div class="container"><h1>Obtiene guias</h1>
+
+    <label for="K_Cliente">Cliente:</label><br>
+    <input type="text" id="K_Cliente" name="K_Cliente"><br>
+    <label for="Busqueda">Búsqueda:</label><br>
+    <input type="text" id="Busqueda" name="Busqueda"><br>
+    <label for="FI">Fecha Inicial:</label><br>
+    <input type="text" id="FI" name="FI"><br>
+    <label for="FF">Fecha Final:</label><br>
+    <input type="text" id="FF" name="FF"><br>
+    <label for="RUT">RUT:</label><br>
+    <input type="text" id="RUTObtieneCostoCliente" name="RUT"><br>
+    <input type="text" id="ID_Sesion" name="ID_Sesion" style="display: none;" readonly><br><br>
+    <button id="enviar">Enviar</button>
+
+
+    <h2>Respuesta del Servidor</h2>
+    <table class="response-table">
+      <thead>
+        <tr>
+          <th>Oficina Origen</th>
+          <th>Guia</th>
+          <th>Factura</th>
+          <th>Tipo Guia</th>
+          <th>Tipo Envio</th>
+          <th>Fecha de creación</th>
+          <!-- Añade más encabezados según las propiedades que desees mostrar -->
+        </tr>
+      </thead>
+      <tbody id="tablaDatos" >
+        <!-- Aquí se agregarán las filas dinámicamente -->
+      </tbody>
+    </table>
+
+
+</div>
+
+
+
 <script src="/js/WebServices.js"></script>
 </body>
 </html>

@@ -146,40 +146,40 @@ button:hover {
     overflow-x: auto;
 }
 
-#response-table {
+.response-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-#response-table th,
-#response-table td {
+.response-table th,
+.response-table td {
     border: 1px solid #dddddd;
     padding: 10px;
 }
 
-#response-table th {
+.response-table th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
 
 /* Estilos para filas impares */
-#response-table tr:nth-child(odd) td {
+.response-table tr:nth-child(odd) td {
     background-color: #f9f9f9;
 }
 
 /* Estilos para filas al pasar el ratón */
-#response-table tr:hover {
+.response-table tr:hover {
     background-color: #e2e2e2;
 }
 
 /* Estilos para la primera columna (claves) */
-#response-table td:first-child {
+.response-table td:first-child {
     font-weight: bold;
 }
 
 /* Estilos para la última columna (valores) */
-#response-table td:last-child {
+.response-table td:last-child {
     font-style: italic;
 }
 
