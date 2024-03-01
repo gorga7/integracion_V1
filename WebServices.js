@@ -8,11 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let paquetes = [];
 
 
-
-
-
-
-    
     //WEBSERVICE INGUIA_LEVANTE PARA CREAR ENVÍO
 
      // Agrega un event listener al botón de crear envío
@@ -485,10 +480,10 @@ document.getElementById("enviar").addEventListener("click", function() {
           fila.innerHTML = `
             <td>${item.D_Oficina_Origen}</td>
             <td>${item.K_Guia}</td>
-            <td>${item.K_Factura}</td>
             <td>${item.D_Tipo_Guia}</td>
             <td>${item.D_Tipo_Envio}</td>
             <td>${item.F_Documentacion}</td>
+            <td>${item.D_Estado_Guia}</td>
             <!-- Agrega más celdas según las propiedades que desees mostrar -->
           `;
           tablaDatos.appendChild(fila);

@@ -38,7 +38,7 @@ btnEnviar.addEventListener('click', async function () {
        // Verificar si la propiedad 'result' es 1 (error)
         if (responseData.result === 1) {
             console.log('Error:', responseData.data);
-            document.getElementById('Respuesta').innerText = JSON.stringify(responseData.data);
+            alert('Usuario y/o contraseña incorrecto');
           
         } else {
             alert('Logueado correctamente');

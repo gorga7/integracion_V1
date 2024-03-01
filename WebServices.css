@@ -212,3 +212,18 @@ button:hover {
     background-color: #ffffff;
 }
 
+#estado-guia {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Efecto hover */
+#estado-guia:hover {
+    background-color: #ca9191;
+    size: 200px;
+}
