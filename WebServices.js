@@ -12,6 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
   pNombre.innerHTML = `Bienvenido, ${localStorage.getItem("Nombre")}`;
   divNombre.appendChild(pNombre);
 
+  function isLoggedIn() {
+    let IDSession = localStorage.getItem("ID_Session");
+
+    if (IDSession) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  window.addEventListener("load", function () {
+    if (!isLoggedIn()) {
+      window.location.href = "index.html";
+    }
+  });
+
   //WEBSERVICE INGUIA_LEVANTE PARA CREAR ENVÍO
 
   // Agrega un event listener al botón de crear envío
@@ -556,7 +572,7 @@ btncerrarSesion.addEventListener("click", () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        window.alert(`Has cerrado Sesion}`);
+        window.alert(`Has cerrado Sesion`);
         localStorage.removeItem("ID_Session"); // Remover el ID de sesión del almacenamiento local
         console.log(data);
         window.location.href = "index.html";

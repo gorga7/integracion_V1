@@ -60,6 +60,11 @@ input[type="text"]:focus {
     outline: none;
 }
 
+#divNombre{
+    background-color: rgb(234, 243, 234);
+    border-color: #555;
+}
+
 button {
     width: calc(100%);
     padding: 10px;
