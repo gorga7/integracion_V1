@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Declara un array vacío para almacenar los paquetes
   let paquetes = [];
 
+  let divNombre = document.getElementById("divNombre");
+  let pNombre = document.createElement("p");
+  pNombre.innerHTML = `Bienvenido, ${localStorage.getItem("Nombre")}`;
+  divNombre.appendChild(pNombre);
+
+  
   //WEBSERVICE INGUIA_LEVANTE PARA CREAR ENVÍO
 
   // Agrega un event listener al botón de crear envío
@@ -554,6 +560,7 @@ btncerrarSesion.addEventListener("click", () => {
         window.alert(`Has cerrado Sesion}`);
         localStorage.removeItem("ID_Session"); // Remover el ID de sesión del almacenamiento local
         console.log(data);
+        window.location.href = "index.html";
       })
       .catch((error) => {
         console.error("Error:", error);

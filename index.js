@@ -44,6 +44,7 @@ btnEnviar.addEventListener("click", async function () {
       alert("Logueado correctamente");
       console.log(responseData);
       localStorage.setItem("ID_Session", responseData.data[0].ID_Session);
+      localStorage.setItem("Nombre", responseData.data[0].D_Cliente)
       window.location.href = "WebServices.html";
     }
   } catch (error) {
