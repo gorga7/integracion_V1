@@ -61,7 +61,7 @@ input[type="text"]:focus {
 }
 
 button {
-    width: calc(100% - 20px);
+    width: calc(100%);
     padding: 10px;
     font-size: 14px;
     color: #fff;
