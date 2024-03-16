@@ -1,253 +1,289 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear envío</title>
-    <link rel="stylesheet" type="text/css" href="WebServices.css">
-</head>
-<body>
-
+    <link rel="stylesheet" type="text/css" href="WebServices.css" />
+  </head>
+  <body>
     <div class="cerrarSesion">
-        <button id="btncerrarSesion">Cerrar Sesion</button>
+      <button id="btncerrarSesion">Cerrar Sesion</button>
     </div>
 
-    
     <div class="container">
-        <img src="https://www.dac.com.uy/imagenes/logo-tr-color.png" alt="DAC Logo" class="logo">
-        <div id="divNombre"></div>
-        <h1>Crear envío</h1>
-    <form id="jsonForm">
-
-        <label for="K_Tipo_Guia" >Tipo de guia:</label>
-        <input type="number" value="4" id="K_Tipo_Guia" required><br>
+      <img
+        src="https://www.dac.com.uy/imagenes/logo-tr-color.png"
+        alt="DAC Logo"
+        class="logo"
+      />
+      <div id="divNombre"></div>
+      <h1>Crear envío</h1>
+      <form id="jsonForm">
+        <label for="K_Tipo_Guia">Tipo de guia:</label>
+        <input type="number" value="4" id="K_Tipo_Guia" required /><br />
 
         <label for="K_Tipo_Envio">Tipo de envio</label>
-        <input type="number" value="1" id="K_Tipo_Envio" required><br>
+        <input type="number" value="1" id="K_Tipo_Envio" required /><br />
 
         <label for="F_Recoleccion">Fecha de recoleccion:</label>
-        <input type="text" id="F_Recoleccion" ><br>
+        <input type="text" id="F_Recoleccion" /><br />
 
         <label for="K_Domicilio_Recoleccion">Domicilio de recoleccion:</label>
-        <input type="number" id="K_Domicilio_Recoleccion" ><br>
+        <input type="number" id="K_Domicilio_Recoleccion" /><br />
 
         <label for="D_Cliente_Remitente">Remitente:</label>
-        <input type="text" value="Prueba remitente" id="D_Cliente_Remitente" required><br>
+        <input
+          type="text"
+          value="Prueba remitente"
+          id="D_Cliente_Remitente"
+          required
+        /><br />
 
         <label for="Telefono_Remitente">Telefono del remitente:</label>
-        <input type="text" value="092737362" id="Telefono_Remitente" required><br>
+        <input
+          type="text"
+          value="092737362"
+          id="Telefono_Remitente"
+          required
+        /><br />
 
         <label for="K_Cliente_Destinatario">Nro. Cliente Destinatario</label>
-        <input type="number" value="5" id="K_Cliente_Destinatario" required><br>
+        <input
+          type="number"
+          value="5"
+          id="K_Cliente_Destinatario"
+          required
+        /><br />
 
         <label for="Cliente_Destinatario">Destinatario</label>
-        <input type="text" value="Prueba Cliente_Destinatario" id="Cliente_Destinatario" required><br>
+        <input
+          type="text"
+          value="Prueba Cliente_Destinatario"
+          id="Cliente_Destinatario"
+          required
+        /><br />
 
         <label for="Direccion_Destinatario">Direccion del destinatario:</label>
-        <input type="text" id="Direccion_Destinatario" required><br>
+        <input type="text" id="Direccion_Destinatario" required /><br />
 
         <label for="Telefono">Telefono destinatario:</label>
-        <input type="text" value="092737362" id="Telefono" required><br>
+        <input type="text" value="092737362" id="Telefono" required /><br />
 
         <label for="RUT">RUT:</label>
-        <input type="text" id="RUT" required><br>
+        <input type="text" id="RUT" required /><br />
 
         <label for="K_Oficina_Destino">Destino</label>
-        <input type="text" value="661" id="K_Oficina_Destino" required><br>
+        <input type="text" value="661" id="K_Oficina_Destino" required /><br />
 
         <label for="Entrega">Entrega:</label>
-        <input type="text" value="1" id="Entrega" required><br>
+        <input type="text" value="1" id="Entrega" required /><br />
 
         <label for="Paquetes_Ampara">Cantidad total de paquetes</label>
-        <input type="text" id="Paquetes_Ampara" required><br>
+        <input type="text" id="Paquetes_Ampara" required /><br />
 
         <label for="Detalle_Paquetes">Detalle de Paquetes:</label>
-<div id="paquetesContainer">
-</div>
-<div class="inputs-container">
-<button type="button" id="agregarPaquete">Agregar Paquete</button> <br>
-</div>
+        <div id="paquetesContainer"></div>
+        <div class="inputs-container">
+          <button type="button" id="agregarPaquete">Agregar Paquete</button>
+          <br />
+        </div>
         <label for="Observaciones">Observaciones:</label>
-        <input type="text" id="Observaciones" required><br>
+        <input type="text" id="Observaciones" required /><br />
 
         <label for="CostoMercaderia">Costo de mercaderia:</label>
-        <input type="text" id="CostoMercaderia" required><br>
+        <input type="text" id="CostoMercaderia" required /><br />
 
         <label for="Referencia_Pago">Referencia de pago:</label>
-        <input type="text" id="Referencia_Pago" required><br>
+        <input type="text" id="Referencia_Pago" required /><br />
 
         <label for="CodigoPedido">Codigo de pedido:</label>
-        <input type="text" id="CodigoPedido" required><br>
+        <input type="text" id="CodigoPedido" required /><br />
 
         <label for="Serv_DDF">Servicio Dev. Doc. Firmado:</label>
-        <input type="text" id="Serv_DDF" required><br>
+        <input type="text" id="Serv_DDF" required /><br />
 
         <label for="Serv_Cita">Serv Cita:</label>
-        <input type="text" id="Serv_Cita" required><br>
+        <input type="text" id="Serv_Cita" required /><br />
 
         <label for="Latitud_Destino">Latitud de Destino:</label>
-        <input type="text" id="Latitud_Destino" required><br>
+        <input type="text" id="Latitud_Destino" required /><br />
 
         <label for="Longitud_Destino">Longitud de Destino:</label>
-        <input type="text" id="Longitud_Destino" required><br>
+        <input type="text" id="Longitud_Destino" required /><br />
         <div class="inputs-container">
-        <button type="button" id="btnCrearEnvio">Crear envío</button>
+          <button type="button" id="btnCrearEnvio">Crear envío</button>
+        </div>
+      </form>
+
+      <p id="Respuesta"></p>
     </div>
-    </form>
 
-    
-    <p id="Respuesta"></p>
-
-</div>
-
-
-
-
-
-    <hr>
+    <hr />
     <div class="container">
-    <h1>Imprime Etiqueta</h1>
-    <div class="inputs-container">
+      <h1>Imprime Etiqueta</h1>
+      <div class="inputs-container">
         <label for="K_Oficina">Oficina de Origen</label>
-        <input type="text" id="K_Oficina" name="K_Oficina" placeholder="ej: 870">
-    
-        <label for="K_Guia">Número de guía</label>
-        <input type="text" id="K_Guia" name="K_Guia" placeholder="ej: 2603001">
+        <input
+          type="text"
+          id="K_Oficina"
+          name="K_Oficina"
+          placeholder="ej: 870"
+        />
 
-        <input type="text" id="CodigoPedidoPegote" name="CodigoPedido" placeholder="Número de referencia externo" style="display: none;">
-    
-        <input type="text" id="ID_Sesion" name="ID_Sesion" style="display: none;" placeholder="ID de Sesión">
-    
+        <label for="K_Guia">Número de guía</label>
+        <input
+          type="text"
+          id="K_Guia"
+          name="K_Guia"
+          placeholder="ej: 2603001"
+        />
+
+        <input
+          type="text"
+          id="CodigoPedidoPegote"
+          name="CodigoPedido"
+          placeholder="Número de referencia externo"
+          style="display: none"
+        />
+
+        <input
+          type="text"
+          id="ID_Sesion"
+          name="ID_Sesion"
+          style="display: none"
+          placeholder="ID de Sesión"
+        />
+
         <!-- Botón para obtener el Pegote -->
         <button id="btnObtenerPegote">Obtener Etiqueta</button>
-    </div></div>
+      </div>
+    </div>
 
+    <hr />
 
+    <div class="container">
+      <h1>Rastrea Envío</h1>
 
-
-
-<hr>
-
-<div class="container">
-    <h1>Rastrea Envío</h1>
-
-    <div class="form-container">
+      <div class="form-container">
         <form id="formulario">
-            <div class="input-group">
-                <label for="K_Oficina_Origen">Oficina de Origen:</label>
-                <input type="text" id="K_Oficina_Origen" name="K_Oficina_Origen">
-            </div>
+          <div class="input-group">
+            <label for="K_Oficina_Origen">Oficina de Origen:</label>
+            <input type="text" id="K_Oficina_Origen" name="K_Oficina_Origen" />
+          </div>
 
-            <div class="input-group">
-                <label for="K_GuiaRastreo">Número de Guía:</label>
-                <input type="text" id="K_GuiaRastreo" name="K_Guia">
-            </div>
+          <div class="input-group">
+            <label for="K_GuiaRastreo">Número de Guía:</label>
+            <input type="text" id="K_GuiaRastreo" name="K_Guia" />
+          </div>
 
-            <div class="input-group">
-            
-                <input type="text" id="Referencia" name="Referencia" style="display: none;">
-            </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="Referencia"
+              name="Referencia"
+              style="display: none"
+            />
+          </div>
 
-            <div class="input-group">
-                
-                <input type="text" id="ID_Sesion" name="ID_Sesion" style="display: none;">
-            </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="ID_Sesion"
+              name="ID_Sesion"
+              style="display: none"
+            />
+          </div>
 
-            <button type="submit">Rastrear envío</button>
+          <button type="submit">Rastrear envío</button>
         </form>
-    </div>
+      </div>
 
-    <div id="output-container">
-         <table class="response-table">
-            <tr>
-                <th>Datos</th>
-                <th>Informacion</th>
-            </tr>
-            <tr>
-                <td>Remitente</td>
-                <td id="cliente-remitente"></td>
-            </tr>
-            <tr>
-                <td>Destinatario</td>
-                <td id="destinatario"></td>
-            </tr>
-            <tr>
-                <td>Tipo de Guia</td>
-                <td id="d-tipo-guia"></td>
-            </tr>
-            <tr>
-                <td>Tipo de Paquete</td>
-                <td id="d-tipo-envio"></td>
-            </tr>
-            <tr>
-                <td>Cantidad de Paquetes</td>
-                <td id="cantidad-paquetes"></td>
-            </tr>
-            <tr>
-                <td>Tipo de Entrega</td>
-                <td id="d-tipo-entrega"></td>
-            </tr>
-            <tr>
-                <td>Destino</td>
-                <td id="oficina-destino"></td>
-            </tr>
-            <tr>
-                <td>Estado de la Guia</td>
-                <td id="estado-guia"></td>
-                
-            </tr>
+      <div id="output-container">
+        <table class="response-table">
+          <tr>
+            <th>Datos</th>
+            <th>Informacion</th>
+          </tr>
+          <tr>
+            <td>Remitente</td>
+            <td id="cliente-remitente"></td>
+          </tr>
+          <tr>
+            <td>Destinatario</td>
+            <td id="destinatario"></td>
+          </tr>
+          <tr>
+            <td>Tipo de Guia</td>
+            <td id="d-tipo-guia"></td>
+          </tr>
+          <tr>
+            <td>Tipo de Paquete</td>
+            <td id="d-tipo-envio"></td>
+          </tr>
+          <tr>
+            <td>Cantidad de Paquetes</td>
+            <td id="cantidad-paquetes"></td>
+          </tr>
+          <tr>
+            <td>Tipo de Entrega</td>
+            <td id="d-tipo-entrega"></td>
+          </tr>
+          <tr>
+            <td>Destino</td>
+            <td id="oficina-destino"></td>
+          </tr>
+          <tr>
+            <td>Estado de la Guia</td>
+            <td id="estado-guia"></td>
+          </tr>
         </table>
+      </div>
+      <div id="historial-container"></div>
     </div>
-    <div id="historial-container"></div>
-</div>
-<hr>
+    <hr />
 
+    <div class="container">
+      <h1>Obtiene guias</h1>
 
+      <label for="K_Cliente">Cliente:</label><br />
+      <input type="text" id="K_Cliente" name="K_Cliente" /><br />
+      <label for="Busqueda">Búsqueda:</label><br />
+      <input type="text" id="Busqueda" name="Busqueda" /><br />
+      <label for="FI">Fecha Inicial:</label><br />
+      <input type="text" id="FI" name="FI" /><br />
+      <label for="FF">Fecha Final:</label><br />
+      <input type="text" id="FF" name="FF" /><br />
+      <label for="RUT">RUT:</label><br />
+      <input type="text" id="RUTObtieneCostoCliente" name="RUT" /><br />
+      <input
+        type="text"
+        id="ID_Sesion"
+        name="ID_Sesion"
+        style="display: none"
+        readonly
+      /><br /><br />
+      <button id="enviar">Enviar</button>
 
+      <h2>Respuesta del Servidor</h2>
+      <table class="response-table">
+        <thead>
+          <tr>
+            <th>Oficina Origen</th>
+            <th>Guia</th>
+            <th>Tipo Guia</th>
+            <th>Tipo Envio</th>
+            <th>Fecha de creación</th>
+            <th>Estado Guia</th>
+            <!-- Añade más encabezados según las propiedades que desees mostrar -->
+          </tr>
+        </thead>
+        <tbody id="tablaDatos">
+          <!-- Aquí se agregarán las filas dinámicamente -->
+        </tbody>
+      </table>
+    </div>
 
-
-
-
-
-<div class="container"><h1>Obtiene guias</h1>
-
-    <label for="K_Cliente">Cliente:</label><br>
-    <input type="text" id="K_Cliente" name="K_Cliente"><br>
-    <label for="Busqueda">Búsqueda:</label><br>
-    <input type="text" id="Busqueda" name="Busqueda"><br>
-    <label for="FI">Fecha Inicial:</label><br>
-    <input type="text" id="FI" name="FI"><br>
-    <label for="FF">Fecha Final:</label><br>
-    <input type="text" id="FF" name="FF"><br>
-    <label for="RUT">RUT:</label><br>
-    <input type="text" id="RUTObtieneCostoCliente" name="RUT"><br>
-    <input type="text" id="ID_Sesion" name="ID_Sesion" style="display: none;" readonly><br><br>
-    <button id="enviar">Enviar</button>
-
-
-    <h2>Respuesta del Servidor</h2>
-    <table class="response-table">
-      <thead>
-        <tr>
-          <th>Oficina Origen</th>
-          <th>Guia</th>
-          <th>Tipo Guia</th>
-          <th>Tipo Envio</th>
-          <th>Fecha de creación</th>
-          <th>Estado Guia</th>
-          <!-- Añade más encabezados según las propiedades que desees mostrar -->
-        </tr>
-      </thead>
-      <tbody id="tablaDatos" >
-        <!-- Aquí se agregarán las filas dinámicamente -->
-      </tbody>
-    </table>
-
-
-</div>
-
-
-
-<script src="WebServices.js"></script>
-</body>
+    <script src="WebServices.js"></script>
+  </body>
 </html>

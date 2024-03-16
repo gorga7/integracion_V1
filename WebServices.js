@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
   pNombre.innerHTML = `Bienvenido, ${localStorage.getItem("Nombre")}`;
   divNombre.appendChild(pNombre);
 
-  
   //WEBSERVICE INGUIA_LEVANTE PARA CREAR ENVÍO
 
   // Agrega un event listener al botón de crear envío
