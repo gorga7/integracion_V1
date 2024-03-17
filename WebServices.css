@@ -60,9 +60,30 @@ input[type="text"]:focus {
     outline: none;
 }
 
-#divNombre{
-    background-color: rgb(234, 243, 234);
-    border-color: #555;
+#divNombre {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipo de fuente */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #fff; /* Color del texto */
+    padding: 0.5%;/* Espacio alrededor del texto */
+    background-color: #007bff; /* Color de fondo */
+    border-radius: 25px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: inline-block; /* Mostrar como bloque en línea */
+    transition: background-color 0.3s ease; /* Transición de color de fondo */
+    line-height: 0.5;
+}
+
+#divNombre::before {
+     /* Texto antes del nombre */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#divNombre span {
+    font-weight: bold; /* Nombre en negrita */
+}
+
+#divNombre:hover {
+    background-color: #0056b3; /* Cambio de color de fondo al pasar el cursor */
 }
 
 #btncerrarSesion{
@@ -70,12 +91,15 @@ input[type="text"]:focus {
     padding: 10px;
     font-size: 14px;
     color: #fff;
-    background-color: #489d5a;
+    background-color: #50c569;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     
 
+}
+#btncerrarSesion:hover{
+    background-color: #095c22ce; /* Cambio de color de fondo al pasar el cursor */
 }
 
 .buttons-container {
