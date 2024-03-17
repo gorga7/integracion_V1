@@ -65,8 +65,30 @@ input[type="text"]:focus {
     border-color: #555;
 }
 
+#btncerrarSesion{
+    width: calc(10% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #489d5a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+
+}
+
+.buttons-container {
+    text-align: center; /* Alinea los botones horizontalmente */
+    margin-top: 20px;
+}
+
+.buttons-container button {
+    width: 200px; /* Establece un ancho fijo para todos los botones */
+    margin: 0 5px; /* Ajusta el espacio entre los botones */
+}
 button {
-    width: calc(100%);
+    width: calc(50% - 20px);
     padding: 10px;
     font-size: 14px;
     color: #fff;
