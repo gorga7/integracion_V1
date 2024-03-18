@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Obtiene el ID de sesión almacenado en el localStorage
       const ID_Sesion = localStorage.getItem("ID_Session");
       // Obtiene los valores de diferentes campos del formulario
-      const K_Tipo_Guia = document.getElementById("K_Tipo_Guia").value;
-      const K_Tipo_Envio = document.getElementById("K_Tipo_Envio").value;
+      const K_Tipo_Guia = document.querySelector('select[name="K_Tipo_Guia"]').value;
+      const K_Tipo_Envio = document.querySelector('select[name="K_Tipo_Envio"]').value;
       const F_Recoleccion = document.getElementById("F_Recoleccion").value;
       const K_Domicilio_Recoleccion = document.getElementById(
         "K_Domicilio_Recoleccion"
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const RUT = document.getElementById("RUT").value;
       const K_Oficina_Destino =
         document.getElementById("K_Oficina_Destino").value;
-      const Entrega = document.getElementById("Entrega").value;
+        const Entrega = document.querySelector('select[name="Entrega"]').value;
       const Paquetes_Ampara = document.getElementById("Paquetes_Ampara").value;
       const CodigoPedido = document.getElementById("CodigoPedido").value; // Obtener CodigoPedido
 
@@ -600,3 +600,16 @@ setInterval(actualizarFechaHora, 1000);
 
 // Llamar a la función inicialmente para evitar un retraso de un segundo
 actualizarFechaHora();
+
+
+function openSettings(option) {
+  // Simplemente para este ejemplo, mostraremos un mensaje indicando qué opción fue seleccionada
+  let settingsContent = document.getElementById('settings-content');
+  settingsContent.innerHTML = "<p>Seleccionaste la opción " + option + ". Los detalles de la configuración se mostrarían aquí.</p>";
+}
+
+function exitSettings() {
+  // Simplemente para este ejemplo, mostraremos un mensaje de despedida
+  let settingsContent = document.getElementById('settings-content');
+  settingsContent.innerHTML = "<p>¡Hasta luego! Gracias por usar nuestro sistema de ajustes.</p>";
+}
