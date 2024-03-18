@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let paquetes = [];
 
   let divNombre = document.getElementById("divNombre");
-  let pNombre = document.getElementById('pNombre')
+  let pNombre = document.getElementById("pNombre");
   pNombre.innerHTML = `Bienvenido, ${localStorage.getItem("Nombre")}`;
   divNombre.appendChild(pNombre);
 
@@ -38,17 +38,24 @@ document.addEventListener("DOMContentLoaded", function () {
       // Obtiene el ID de sesión almacenado en el localStorage
       const ID_Sesion = localStorage.getItem("ID_Session");
       // Obtiene los valores de diferentes campos del formulario
-      const K_Tipo_Guia = document.querySelector('select[name="K_Tipo_Guia"]').value;
-      const K_Tipo_Envio = document.querySelector('select[name="K_Tipo_Envio"]').value;
-      const F_Recoleccion = document.getElementById("F_Recoleccion").value;
+      const K_Tipo_Guia = document.querySelector(
+        'select[name="K_Tipo_Guia"]'
+      ).value;
+      const K_Tipo_Envio = document.querySelector(
+        'select[name="K_Tipo_Envio"]'
+      ).value;
+      const F_Recoleccion = document.getElementById(
+        "F_Recoleccion"
+      ).value;
       const K_Domicilio_Recoleccion = document.getElementById(
         "K_Domicilio_Recoleccion"
       ).value;
       const D_Cliente_Remitente = document.getElementById(
         "D_Cliente_Remitente"
       ).value;
-      const Telefono_Remitente =
-        document.getElementById("Telefono_Remitente").value;
+      const Telefono_Remitente = document.getElementById(
+        "Telefono_Remitente"
+      ).value;
       const K_Cliente_Destinatario = document.getElementById(
         "K_Cliente_Destinatario"
       ).value;
@@ -58,13 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
       const Direccion_Destinatario = document.getElementById(
         "Direccion_Destinatario"
       ).value;
-      const Telefono = document.getElementById("Telefono").value;
-      const RUT = document.getElementById("RUT").value;
-      const K_Oficina_Destino =
-        document.getElementById("K_Oficina_Destino").value;
-        const Entrega = document.querySelector('select[name="Entrega"]').value;
-      const Paquetes_Ampara = document.getElementById("Paquetes_Ampara").value;
-      const CodigoPedido = document.getElementById("CodigoPedido").value; // Obtener CodigoPedido
+      const Telefono = document.getElementById(
+        "Telefono"
+      ).value;
+      const RUT = document.getElementById(
+        "RUT"
+      ).value;
+      const K_Oficina_Destino = document.getElementById(
+        "K_Oficina_Destino"
+      ).value;
+      const Entrega = document.querySelector(
+        'select[name="Entrega"]'
+      ).value;
+      const Paquetes_Ampara = document.getElementById(
+        "Paquetes_Ampara"
+      ).value;
+      const CodigoPedido = document.getElementById(
+        "CodigoPedido"
+      ).value; // Obtener CodigoPedido
 
       // Objeto JSON con los datos del formulario y otros datos necesarios
       const jsonData = {
@@ -585,14 +603,12 @@ btncerrarSesion.addEventListener("click", () => {
   }
 });
 
-
-
 //HORA Y FECHA
 
 function actualizarFechaHora() {
   var fechaHoraActual = new Date();
   var fechaHoraString = fechaHoraActual.toLocaleString();
-  document.getElementById('fecha-hora').innerHTML = fechaHoraString;
+  document.getElementById("fecha-hora").innerHTML = fechaHoraString;
 }
 
 // Actualizar la fecha y hora cada segundo
@@ -601,15 +617,18 @@ setInterval(actualizarFechaHora, 1000);
 // Llamar a la función inicialmente para evitar un retraso de un segundo
 actualizarFechaHora();
 
-
 function openSettings(option) {
   // Simplemente para este ejemplo, mostraremos un mensaje indicando qué opción fue seleccionada
-  let settingsContent = document.getElementById('settings-content');
-  settingsContent.innerHTML = "<p>Seleccionaste la opción " + option + ". Los detalles de la configuración se mostrarían aquí.</p>";
+  let settingsContent = document.getElementById("settings-content");
+  settingsContent.innerHTML =
+    "<p>Seleccionaste la opción " +
+    option +
+    ". Los detalles de la configuración se mostrarían aquí.</p>";
 }
 
 function exitSettings() {
   // Simplemente para este ejemplo, mostraremos un mensaje de despedida
-  let settingsContent = document.getElementById('settings-content');
-  settingsContent.innerHTML = "<p>¡Hasta luego! Gracias por usar nuestro sistema de ajustes.</p>";
+  let settingsContent = document.getElementById("settings-content");
+  settingsContent.innerHTML =
+    "<p>¡Hasta luego! Gracias por usar nuestro sistema de ajustes.</p>";
 }
