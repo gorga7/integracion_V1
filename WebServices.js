@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let paquetes = [];
 
   let divNombre = document.getElementById("divNombre");
-  let pNombre = document.createElement("p");
+  let pNombre = document.getElementById('pNombre')
   pNombre.innerHTML = `Bienvenido, ${localStorage.getItem("Nombre")}`;
   divNombre.appendChild(pNombre);
 
@@ -584,3 +584,19 @@ btncerrarSesion.addEventListener("click", () => {
     console.error("No se encontró el ID de sesión en el almacenamiento local");
   }
 });
+
+
+
+//HORA Y FECHA
+
+function actualizarFechaHora() {
+  var fechaHoraActual = new Date();
+  var fechaHoraString = fechaHoraActual.toLocaleString();
+  document.getElementById('fecha-hora').innerHTML = fechaHoraString;
+}
+
+// Actualizar la fecha y hora cada segundo
+setInterval(actualizarFechaHora, 1000);
+
+// Llamar a la función inicialmente para evitar un retraso de un segundo
+actualizarFechaHora();

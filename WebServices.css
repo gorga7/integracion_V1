@@ -65,7 +65,6 @@ input[type="text"]:focus {
     font-size: 14px; /* Tamaño de fuente */
     color: #fff; /* Color del texto */
     padding: 0.5%;/* Espacio alrededor del texto */
-    background-color: #007bff; /* Color de fondo */
     border-radius: 25px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
     display: inline-block; /* Mostrar como bloque en línea */
@@ -73,14 +72,7 @@ input[type="text"]:focus {
     line-height: 0.5;
 }
 
-#divNombre::before {
-     /* Texto antes del nombre */
-    font-weight: bold; /* Texto en negrita */
-}
 
-#divNombre span {
-    font-weight: bold; /* Nombre en negrita */
-}
 
 #divNombre:hover {
     background-color: #0056b3; /* Cambio de color de fondo al pasar el cursor */
@@ -277,4 +269,14 @@ button:hover {
 #estado-guia:hover {
     background-color: #ca9191;
     size: 200px;
+}
+
+#fecha-hora {
+    font-size: 14px;
+    color: #947373;
+    padding: 10px 20px; /* Ajusta el padding */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centra horizontalmente */
 }
