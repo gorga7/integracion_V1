@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajustes</title>
-    <link rel="stylesheet" href="WebServices.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <script src="/js/script.js"></script>
+    <script src="/js/ajustes.js"></script>
+    <script src="/webServices/wsLogOut.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -44,7 +47,7 @@
             </ul>
           </div>
           <div class="navbar-text">
-            <div id="fecha-hora"></div>
+            <div id="fecha-horaAjustes"></div>
           </div>
           <div id="divNombre"><p class="m-0" id="pNombre"></p></div>
         </div>
@@ -142,17 +145,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="WebServices.js"></script>
 
-    <script>
-      function openSettings(option) {
-        // Simplemente para este ejemplo, mostraremos un mensaje indicando qué opción fue seleccionada
-        let settingsContent = document.getElementById("settings-content");
-        settingsContent.innerHTML =
-          "<p>Seleccionaste la opción " +
-          option +
-          ". Los detalles de la configuración se mostrarían aquí.</p>";
-      }
-    </script>
+    
   </body>
 </html>

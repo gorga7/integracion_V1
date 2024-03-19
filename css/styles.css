@@ -44,7 +44,8 @@ label {
 }
 
 input[type="number"],
-input[type="text"] {
+input[type="text"],
+input[type="date"].form-input {
     width: calc(100% - 20px); /* Reducir el ancho de los inputs */
     padding: 12px; /* Aumentar el relleno de los inputs */
     margin-bottom: 20px; /* Aumentar el espacio entre los inputs */
@@ -54,9 +55,10 @@ input[type="text"] {
 }
 
 input[type="number"]:focus,
-input[type="text"]:focus {
-    border-color: #007bff; /* Cambiar el color del borde al enfocar */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Agregar sombra al enfocar */
+input[type="text"]:focus,
+input[type="date"].form-input:focus {
+    border-color: #095c22ce; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(42, 216, 51, 0.5); /* Agregar sombra al enfocar */
     outline: none;
 }
 
@@ -271,7 +273,11 @@ button:hover {
     size: 200px;
 }
 
-#fecha-hora {
+#fecha-hora,
+ #fecha-horaEnvio,
+ #fecha-horaInicio,
+ #fecha-horaRastreo,
+ #fecha-horaAjustes {
     font-size: 14px;
     color: #947373;
     padding: 10px 20px; /* Ajusta el padding */
@@ -316,4 +322,19 @@ h1 {
 #settings-content {
     margin-left: 220px;
     padding: 20px;
+}
+
+select.form-select {
+    width: calc(100% - 20px); /* Reducir el ancho del select */
+    padding: 12px; /* Aumentar el relleno */
+    margin-bottom: 20px; /* Aumentar el espacio entre los select */
+    border: 1px solid #ddd; /* Cambiar el color del borde */
+    border-radius: 6px; /* Aumentar el radio de borde */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Agregar transición al color del borde y sombra */
+}
+
+select.form-select:focus {
+    border-color: #095c22ce; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(29, 88, 11, 0.5); /* Agregar sombra al enfocar */
+    outline: none;
 }
