@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
           window.alert(`Has cerrado Sesion`);
           localStorage.removeItem("ID_Session"); // Remover el ID de sesión del almacenamiento local
           console.log(data);
-          window.location.href = "../index.html";
+          window.location.href = "../../index.html";
         })
         .catch((error) => {
           console.error("Error:", error);
