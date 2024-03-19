@@ -29,11 +29,12 @@ h1 {
 }
 
 .form-container {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 form {
-    margin-top: 20px;
+    width: 550px; /* Reducir el ancho del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
     text-align: left;
 }
 
@@ -80,6 +81,9 @@ input[type="date"].form-input:focus {
     background-color: #0056b3; /* Cambio de color de fondo al pasar el cursor */
 }
 
+
+
+
 #btncerrarSesion{
     width: calc(10% - 20px);
     padding: 10px;
@@ -122,6 +126,8 @@ button:hover {
 }
 
 #Respuesta {
+    width: 50%; /* Reducir el ancho del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
     margin-top: 20px;
     padding: 15px;
     border-radius: 4px;
