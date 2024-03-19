@@ -45,7 +45,7 @@ btnEnviar.addEventListener("click", async function () {
       console.log(responseData);
       localStorage.setItem("ID_Session", responseData.data[0].ID_Session);
       localStorage.setItem("Nombre", responseData.data[0].D_Cliente)
-      window.location.href = "INTEGRACION_V1/public/html/inicio.html";
+      window.location.href = "https://gorga7.github.io/integracion_V1/public/html/inicio.html";
     }
   } catch (error) {
     // Manejar errores de red y otros errores
