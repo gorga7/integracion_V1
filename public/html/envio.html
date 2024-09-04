@@ -9,6 +9,7 @@
         <script src="/public/webServices/wsLogOut.js"></script>
         <script src="/public/webServices/wsInGuia_Levante.js"></script>
         <script src="/public/webServices/wsGetPegote.js"></script>
+        <script src="/public/webServices/wsOficina.js"></script>
         
         
 
@@ -155,10 +156,14 @@
         <input type="text" value="092737362" id="Telefono" required /><br />
 
         <label for="RUT">RUT:</label>
-        <input type="text" id="RUT" required /><br />
+        <input type="text" id="RUT" required /><br /><br />
 
-        <label for="K_Oficina_Destino">Destino</label>
-        <input type="text" value="661" id="K_Oficina_Destino" required /><br />
+        <select class="form-select" aria-label="Default select example" id="sucursales">
+        <option selected disabled>Seleccione Sucursal</option>
+        
+        </select>
+
+   
 
         <label for="Paquetes_Ampara">Cantidad total de paquetes</label>
         <input type="text" id="Paquetes_Ampara" required /><br />
